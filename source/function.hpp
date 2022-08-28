@@ -17,6 +17,7 @@
 
 #include <clang/AST/Decl.h>
 #include <clang/AST/DeclCXX.h>
+#include "fmt/format.h"
 
 #include <string>
 #include <tuple>
@@ -32,7 +33,7 @@ std::string function_arguments(clang::FunctionDecl const *record);
 /// Generate function argument list separated by comma
 /// name_arguments - if arguments should be named: a1, a2, ...
 /// n - number of arguments to generate. If n > num_of_function_parameters - generate only list with num_of_function_parameters
-std::pair<std::string, std::string> function_arguments_for_lambda(clang::FunctionDecl const *record, uint n);
+std::pair<std::string, std::string> function_arguments_for_lambda(clang::FunctionDecl const *record, size_t n);
 
 
 /// Generate function argument list with types separated by comma and with only arguments names
