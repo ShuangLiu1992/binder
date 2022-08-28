@@ -22,7 +22,7 @@
 #include <clang/AST/ExprCXX.h>
 #include <clang/Basic/SourceManager.h>
 
-//#include <experimental/filesystem>
+#include <filesystem>
 #include <cctype>
 #include <cstdlib>
 #include <fstream>
@@ -119,9 +119,7 @@ void update_source_file(std::string const &prefix, std::string const &file_name,
 	dirs.pop_back();
 	for( auto &d : dirs ) path += "/" + d;
 
-	// std::experimental::filesystem::create_directories(path);
-	string command_line = "mkdir -p " + path;
-	system(command_line.c_str());
+	std::filesystem::create_directories(path);
 
 	string full_file_name = prefix + '/' + file_name;
 	std::ifstream f(full_file_name);
