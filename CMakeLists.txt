@@ -1,8 +1,6 @@
 #This file can be used to build binder using preinstalled LLVM/Clang
 CMAKE_MINIMUM_REQUIRED(VERSION 3.22)
 PROJECT(binder CXX C)
-include(conanbuildinfo.cmake)
-conan_basic_setup()
 SET(VERSION 1.0.0)
 #This actually will work even with C++11
 #So far there are exceptions in config.cpp
